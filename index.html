@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Responsive Navigation Demo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+	<script>
+		$(function () {
+			$("a.navigationHeader").click(function (e) {
+				e.preventDefault();
+				$("nav ul").slideToggle();
+			});
+		});
+	</script>
+	<style type="text/css">
+		/* Default cleatfix*/
+		.clearfix:before,
+		.clearfix:after
+		{
+			content: " ";
+			display: table;
+		}
+
+		.clearfix:after
+		{
+		}
+
+		.clearfix
+		{
+			*zoom: 1;
+		}
+
+		/* Commom styles */
+		body
+		{
+			background-color: #ece8e5;
+			margin: 0px;
+			padding: 0px;
+			font-family: Segoe UI, Verdana, Arial;
+		}
+
+		/* Default navigation style */
+		nav
+		{
+			height: 40px;
+			width: 100%;
+			background: #455868;
+			font-size: 11pt;
+			position: relative;
+		}
+
+			nav ul
+			{
+				padding: 0;
+				margin: 0 auto;
+				width: 400px;
+				height: 40px;
+			}
+
+			nav li
+			{
+				display: inline;
+				float: left;
+			}
+
+			nav a
+			{
+				color: #fff;
+				display: inline-block;
+				width: 100px;
+				text-align: center;
+				text-decoration: none;
+				line-height: 40px;
+			}
+
+				nav a:hover, nav a:active
+				{
+					background-color: #8c99a4;
+				}
+
+				nav a.navigationHeader
+				{
+					display: none;
+				}
+
+		/* Snapped navigation styles */
+		@media only screen and (max-width : 600px)
+		{
+			nav
+			{
+				height: auto;
+			}
+
+				nav a
+				{
+					text-align: left;
+					width: 100%;
+					text-indent: 25px;
+				}
+
+
+				nav ul
+				{
+					display: none;
+					height: auto;
+					width: auto;
+				}
+
+				nav a.navigationHeader
+				{
+					display: block;
+					background-color: #283744;
+					width: 100%;
+					position: relative;
+				}
+
+				nav li
+				{
+					display: block;
+					float: none;
+					width: 100%;
+				}
+
+					nav li a
+					{
+					}
+		}
+
+		/* Responsive helpers */
+		.responsive
+		{
+			margin: 5px;
+			display: none;
+			font-size: 34px;
+		}
+
+		.responsive h1
+		{
+			text-transform: uppercase;
+			font-weight: lighter;
+		}
+
+		.sBig
+		{
+			padding: 0px 25px;
+			font-size: 16pt;
+			line-height: 20pt;
+		}
+			.sBig h1
+			{
+				font-size: 34pt;
+				line-height: 34pt;
+			}
+
+		.s600
+		{
+			padding: 0px 25px;
+			font-size: 14pt;
+			line-height: 20pt;
+		}
+			.s600 h1
+			{
+				font-size: 28pt;
+				line-height: 28pt;
+			}
+
+		.s480
+		{
+			padding: 0px 10px;
+			font-size: 14pt;
+			line-height: 18pt;
+		}
+			.s480 h1
+			{
+				font-size: 24pt;
+				line-height: 24pt;
+			}
+
+		.s320
+		{
+			padding: 0px 5px;
+			font-size: 14pt;
+			line-height: 18pt;
+		}
+			.s320 h1
+			{
+				font-size: 24pt;
+				line-height: 24pt;
+			}
+
+		/* Big screen styles */
+		@media screen and (min-width: 601px)
+		{
+			.responsive.sBig
+			{
+				display: block;
+			}
+		}
+		/* 600px screen styles */
+		@media screen and (min-width: 481px) and (max-width: 600px)
+		{
+			.responsive.s600
+			{
+				display: block;
+			}
+
+		}
+
+		/* 480px screen styles (smartphones in landscape mode) */
+		@media only screen and (min-width : 321px) and (max-width : 480px)
+		{
+			.responsive.s480
+			{
+				display: block;
+			}
+
+		}
+
+		/* 320px screen styles (smartphones) */
+		@media only screen and (max-width : 320px)
+		{
+			@-ms-viewport
+			{
+				width: 320px;
+			}
+
+			.responsive.s320
+			{
+				display: block;
+			}
+
+		}
+	</style>
+</head>
+<body>
+	<nav class="clearfix">
+		<ul class="clearfix">
+			<li><a href="http://windows.microsoft.com/">Windows</a></li>
+			<li><a href="http://office.microsoft.com/">Office</a></li>
+			<li><a href="http://www.xbox.com/">Xbox</a></li>
+			<li><a href="http://clk.atdmt.com/MRT/go/420109147/direct/01/">Surface</a></li>
+		</ul>
+		<a href="#" class="navigationHeader">Navigation </a>
+	</nav>
+
+	<div class="responsive sBig">
+		<h1>Big screen layout</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse cursus elementum augue, nec dapibus risus suscipit id. Proin non tellus lacus. Curabitur molestie, nibh ac blandit faucibus, quam elit suscipit diam, quis placerat nisl sem ac quam. Ut sit amet turpis tellus. Proin venenatis semper metus, aliquam interdum tellus egestas ac. Etiam justo purus, tristique non accumsan id, dignissim a ipsum. Phasellus auctor, nulla et gravida pharetra, mi urna ullamcorper felis, sed pellentesque metus mauris eu dolor. Proin odio eros, dictum sed dapibus id, suscipit quis orci.</p>
+		<p>Etiam sodales adipiscing est, ac congue enim ultrices non. Fusce ultricies imperdiet nunc, eget facilisis tortor aliquet id. Pellentesque accumsan, leo id mollis blandit, justo ligula luctus ligula, sollicitudin hendrerit lectus nunc ut massa. Sed turpis eros, ullamcorper quis laoreet id, mollis id enim. Nulla urna urna, cursus non facilisis quis, luctus vel diam. Donec sem mi, gravida sed mollis a, porta at eros. Nulla nec nisi elit, quis tempor ligula. Ut consectetur, velit eu luctus euismod, ligula metus hendrerit mauris, ut commodo eros sem et erat. Nunc eleifend sollicitudin justo. Sed lorem dolor, ornare egestas accumsan sed, rhoncus at arcu. Duis malesuada sem sed sem commodo sed lobortis purus cursus. Vestibulum eget nisl enim, vel tempor elit. Curabitur eget massa odio, nec semper eros.</p>
+		<p>Sed magna metus, porta convallis malesuada at, porttitor quis lacus. Nulla facilisi. Maecenas dolor urna, semper ut tempus nec, accumsan quis eros. In hac habitasse platea dictumst. Curabitur luctus justo vitae velit porttitor eget scelerisque odio luctus. Ut feugiat vulputate urna, in tempus nulla bibendum non. Phasellus non leo tellus. Nullam eget justo vel eros bibendum lobortis non id purus. Maecenas vulputate quam ac nisi venenatis posuere. Etiam sit amet tellus vel orci pretium hendrerit sit amet et nisl. Quisque laoreet fermentum mi eget vehicula. Fusce lobortis tristique semper. Etiam molestie vehicula metus, eu dignissim lectus mollis ac. Quisque non libero et risus porttitor vehicula. Maecenas cursus, est fringilla gravida vestibulum, justo turpis porttitor dui, nec molestie massa ligula non metus.</p>
+		<p>Phasellus et fringilla nulla. Pellentesque varius, massa sit amet posuere adipiscing, turpis mi facilisis sem, vitae gravida velit neque eu diam. Donec quis porttitor leo. Cras pulvinar facilisis nibh, vitae fringilla justo mattis commodo. Integer ultricies, magna quis molestie luctus, felis risus posuere nisi, in mollis velit erat vitae ipsum. Vivamus sit amet purus augue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer ultricies lacinia tellus, a lobortis mauris egestas nec. Donec tellus odio, semper ut volutpat id, interdum ut neque. Morbi accumsan imperdiet libero, rutrum laoreet augue porttitor ut. Quisque sit amet ligula ac diam dignissim lacinia. Etiam sollicitudin faucibus tempor. Fusce vel turpis nisl, ac pretium sem. Mauris est elit, elementum eu tempor at, bibendum quis elit. </p>
+		<p>Integer porttitor massa sed nibh condimentum at egestas dui porttitor. Fusce molestie nunc lorem, nec accumsan neque. Phasellus ac metus quam. Praesent sit amet lorem dolor, eu interdum neque. Sed facilisis ligula vel magna tincidunt eu interdum libero pharetra. Mauris varius condimentum diam sed auctor. Nulla facilisi.</p>
+	</div>
+
+	<div class="responsive s600">
+		<h1>Layout for 600px and lower screens</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse cursus elementum augue, nec dapibus risus suscipit id. Proin non tellus lacus. Curabitur molestie, nibh ac blandit faucibus, quam elit suscipit diam, quis placerat nisl sem ac quam. Ut sit amet turpis tellus. Proin venenatis semper metus, aliquam interdum tellus egestas ac. Etiam justo purus, tristique non accumsan id, dignissim a ipsum. Phasellus auctor, nulla et gravida pharetra, mi urna ullamcorper felis, sed pellentesque metus mauris eu dolor. Proin odio eros, dictum sed dapibus id, suscipit quis orci.</p>
+		<p>Etiam sodales adipiscing est, ac congue enim ultrices non. Fusce ultricies imperdiet nunc, eget facilisis tortor aliquet id. Pellentesque accumsan, leo id mollis blandit, justo ligula luctus ligula, sollicitudin hendrerit lectus nunc ut massa. Sed turpis eros, ullamcorper quis laoreet id, mollis id enim. Nulla urna urna, cursus non facilisis quis, luctus vel diam. Donec sem mi, gravida sed mollis a, porta at eros. Nulla nec nisi elit, quis tempor ligula. Ut consectetur, velit eu luctus euismod, ligula metus hendrerit mauris, ut commodo eros sem et erat. Nunc eleifend sollicitudin justo. Sed lorem dolor, ornare egestas accumsan sed, rhoncus at arcu. Duis malesuada sem sed sem commodo sed lobortis purus cursus. Vestibulum eget nisl enim, vel tempor elit. Curabitur eget massa odio, nec semper eros.</p>
+		<p>Sed magna metus, porta convallis malesuada at, porttitor quis lacus. Nulla facilisi. Maecenas dolor urna, semper ut tempus nec, accumsan quis eros. In hac habitasse platea dictumst. Curabitur luctus justo vitae velit porttitor eget scelerisque odio luctus. Ut feugiat vulputate urna, in tempus nulla bibendum non. Phasellus non leo tellus. Nullam eget justo vel eros bibendum lobortis non id purus. Maecenas vulputate quam ac nisi venenatis posuere. Etiam sit amet tellus vel orci pretium hendrerit sit amet et nisl. Quisque laoreet fermentum mi eget vehicula. Fusce lobortis tristique semper. Etiam molestie vehicula metus, eu dignissim lectus mollis ac. Quisque non libero et risus porttitor vehicula. Maecenas cursus, est fringilla gravida vestibulum, justo turpis porttitor dui, nec molestie massa ligula non metus.</p>
+		<p>Phasellus et fringilla nulla. Pellentesque varius, massa sit amet posuere adipiscing, turpis mi facilisis sem, vitae gravida velit neque eu diam. Donec quis porttitor leo. Cras pulvinar facilisis nibh, vitae fringilla justo mattis commodo. Integer ultricies, magna quis molestie luctus, felis risus posuere nisi, in mollis velit erat vitae ipsum. Vivamus sit amet purus augue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer ultricies lacinia tellus, a lobortis mauris egestas nec. Donec tellus odio, semper ut volutpat id, interdum ut neque. Morbi accumsan imperdiet libero, rutrum laoreet augue porttitor ut. Quisque sit amet ligula ac diam dignissim lacinia. Etiam sollicitudin faucibus tempor. Fusce vel turpis nisl, ac pretium sem. Mauris est elit, elementum eu tempor at, bibendum quis elit. </p>
+	</div>
+
+	<div class="responsive s480">
+		<h1>Layout for 480px and lower screens</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse cursus elementum augue, nec dapibus risus suscipit id. Proin non tellus lacus. Curabitur molestie, nibh ac blandit faucibus, quam elit suscipit diam, quis placerat nisl sem ac quam. Ut sit amet turpis tellus. Proin venenatis semper metus, aliquam interdum tellus egestas ac. Etiam justo purus, tristique non accumsan id, dignissim a ipsum. Phasellus auctor, nulla et gravida pharetra, mi urna ullamcorper felis, sed pellentesque metus mauris eu dolor. Proin odio eros, dictum sed dapibus id, suscipit quis orci.</p>
+		<p>Etiam sodales adipiscing est, ac congue enim ultrices non. Fusce ultricies imperdiet nunc, eget facilisis tortor aliquet id. Pellentesque accumsan, leo id mollis blandit, justo ligula luctus ligula, sollicitudin hendrerit lectus nunc ut massa. Sed turpis eros, ullamcorper quis laoreet id, mollis id enim. Nulla urna urna, cursus non facilisis quis, luctus vel diam. Donec sem mi, gravida sed mollis a, porta at eros. Nulla nec nisi elit, quis tempor ligula. Ut consectetur, velit eu luctus euismod, ligula metus hendrerit mauris, ut commodo eros sem et erat. Nunc eleifend sollicitudin justo. Sed lorem dolor, ornare egestas accumsan sed, rhoncus at arcu. Duis malesuada sem sed sem commodo sed lobortis purus cursus. Vestibulum eget nisl enim, vel tempor elit. Curabitur eget massa odio, nec semper eros.</p>
+		<p>Sed magna metus, porta convallis malesuada at, porttitor quis lacus. Nulla facilisi. Maecenas dolor urna, semper ut tempus nec, accumsan quis eros. In hac habitasse platea dictumst. Curabitur luctus justo vitae velit porttitor eget scelerisque odio luctus. Ut feugiat vulputate urna, in tempus nulla bibendum non. Phasellus non leo tellus. Nullam eget justo vel eros bibendum lobortis non id purus. Maecenas vulputate quam ac nisi venenatis posuere. Etiam sit amet tellus vel orci pretium hendrerit sit amet et nisl. Quisque laoreet fermentum mi eget vehicula. Fusce lobortis tristique semper. Etiam molestie vehicula metus, eu dignissim lectus mollis ac. Quisque non libero et risus porttitor vehicula. Maecenas cursus, est fringilla gravida vestibulum, justo turpis porttitor dui, nec molestie massa ligula non metus.</p>
+	</div>
+
+	<div class="responsive s320">
+		<h1>Layout for small screens</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse cursus elementum augue, nec dapibus risus suscipit id. Proin non tellus lacus. Curabitur molestie, nibh ac blandit faucibus, quam elit suscipit diam, quis placerat nisl sem ac quam. Ut sit amet turpis tellus. Proin venenatis semper metus, aliquam interdum tellus egestas ac. Etiam justo purus, tristique non accumsan id, dignissim a ipsum. Phasellus auctor, nulla et gravida pharetra, mi urna ullamcorper felis, sed pellentesque metus mauris eu dolor. Proin odio eros, dictum sed dapibus id, suscipit quis orci.</p>
+	</div>
+</body>
+</html>
